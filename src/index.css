@@ -15,3 +15,8 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'manrope';
+  src: url('font/Manrope-VariableFont_wght.ttf');
+}
