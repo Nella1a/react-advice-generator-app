@@ -10,7 +10,7 @@ module.exports = {
         'grayish-blue': '#4e5d73',
         'dark-grayish-blue': '	#323a49',
       },
-      fontSize: '28px',
+      fontSize: { 'quote-size': '28px' },
       fontWeight: 800,
     },
   },
