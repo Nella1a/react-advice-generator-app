@@ -24,8 +24,8 @@ export default function Quotes() {
   }, []);
   return (
     <section>
-      <div>
-        <span>ADVICE {advice?.id}</span>
+      <div className="text-amber-500">
+        <span className="text-7xl	">ADVICE {advice?.id}</span>
         <p>{advice?.advice}</p>
       </div>
     </section>
