@@ -8,16 +8,16 @@ type APIRESPONSE = {
 export default function Quotes() {
   const [advice, setAdvice] = useState<APIRESPONSE>();
   const [getNewAdvice, setGetNewAdive] = useState(false);
+  const [errors, setErrors] = useState<string | undefined>();
   useEffect(() => {
     async function getAdvise() {
       const response = await fetch('https://api.adviceslip.com/advice', {
         method: 'GET',
       });
       const apiResponse = await response.json();
-      if (apiResponse.status > 200) {
-        console.log('ERRORS');
+      if (apiResponse.message?.type === 'error') {
+        setErrors(apiResponse.message.text);
       } else {
-        console.log('Response: ', apiResponse);
         setAdvice(apiResponse.slip);
       }
     }
@@ -32,16 +32,18 @@ export default function Quotes() {
   };
 
   return (
-    // <div
-    //   className="text-amber-500 w-7/12 h-80 bg-dark-grayish-blue rounded-lg
-    // flex flex-col justify-start items-center gap-6 relative font-manrope px-2 pt-2 pb-4"
-    // >
     <div className="h-[30rem] w-11/12  text-amber-500  bg-dark-grayish-blue rounded-lg gap-6 relative font-manrope px-8 pt-8 pb-4  text-center sm:h-96 sm:w-[35rem] ">
       <p className="text-neon-green  tracking-widest text-center font-bold">
         ADVICE #{advice?.id}
       </p>
       <p className="h-64 flex justify-center items-center  text-quote-size text-light-cyan m-auto font-extrabold my-6 sm:h-48 sm:min-h-0 ">
-        <span> &#8220;{advice?.advice}&#8221;</span>
+        {!errors ? (
+          <span> &#8220;{advice?.advice}&#8221;</span>
+        ) : (
+          <span className={'text-red-600'}>
+            Oops, something went wrong. Please try again!
+          </span>
+        )}
       </p>
       <div className="flex justify-center">
         <img
