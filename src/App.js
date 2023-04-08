@@ -1,4 +1,4 @@
-import Quotes from './components/Quotes.tsx';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
