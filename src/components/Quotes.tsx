@@ -35,7 +35,7 @@ export default function Quotes() {
   };
 
   return (
-    <div className="flex flex-col h-[28rem] w-11/12  text-amber-500  bg-dark-grayish-blue rounded-3xl gap-6 relative font-manrope px-8 pt-8 pb-4  text-center drop-shadow-2xl sm:h-[21rem] sm:w-[35rem] ">
+    <div className="flex flex-col h-[27rem] w-11/12  text-amber-500  bg-dark-grayish-blue rounded-3xl gap-6 relative font-manrope px-8 pt-8 pb-4  text-center drop-shadow-xl sm:h-[21rem] sm:w-[35rem] ">
       <h1 className="text-neon-green  tracking-[0.2rem] text-center font-semibold">
         ADVICE #{advice?.id}
       </h1>
