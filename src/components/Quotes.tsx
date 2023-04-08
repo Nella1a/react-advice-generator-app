@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import RoundButton from './RoundButton';
 
 type APIRESPONSE = {
   id: number;
@@ -53,21 +54,7 @@ export default function Quotes() {
           width={'444'}
           height={'16'}
         />
-
-        <button
-          className="absolute z-10 -bottom-10 left-50% bg-neon-green
-          hover:shadow-3xl hover:bg-neon-green
-          rounded-full w-20 h-20 margin-auto flex justify-center items-center sm:w-14 sm:h-14 sm:-bottom-7"
-          onClick={onClickHandler}
-        >
-          {' '}
-          <img
-            src={'/images/icon-dice.svg'}
-            alt={'icon dice'}
-            width={'24'}
-            height={'24'}
-          />
-        </button>
+        <RoundButton onClickHandler={onClickHandler} />
       </div>
     </div>
   );
