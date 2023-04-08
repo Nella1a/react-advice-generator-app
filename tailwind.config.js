@@ -11,8 +11,6 @@ module.exports = {
         'dark-grayish-blue': '	#323a49',
       },
       boxShadow: {
-        /*         '3xl': '0 35px 60px 5px rgba(179, 225, 217, 0.5)',
-         */
         '3xl': '0 0px 30px 5px rgba(82, 225, 168, 0.5)',
       },
 
