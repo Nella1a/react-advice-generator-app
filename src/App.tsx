@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/get-advice" element={<GetAdvice />} />
+        <Route path="/get-advice/:id" element={<GetAdvice />} />
         <Route path="/search-advice" element={<SearchAdvice />} />
         <Route path="*" element={<ErrorPage />} />{' '}
       </Routes>
