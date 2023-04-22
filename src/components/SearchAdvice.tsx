@@ -49,7 +49,11 @@ export default function SearchAdvice() {
 
   return (
     <Layout>
-      <section className={'flex flex-col'}>
+      <section
+        className={
+          'flex flex-col ustify-center items-center border-4 border-white gap-4 h-screen w-1/2'
+        }
+      >
         <SearchTerm
           text={text}
           onClickHandlerSearch={onClickHandlerSearch}

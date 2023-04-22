@@ -12,20 +12,32 @@ export default function SearchTerm({
   setText,
 }: Props) {
   return (
-    <section className={'flex flex-col'}>
-      <div>
+    <article
+      className={
+        'flex flex-col justify-center items-center border-8 border-yellow gap-8 h-2/6 w-full'
+      }
+    >
+      <div
+        className={
+          'text-center border-4 border-red h-1/6 w-full text-quote-size'
+        }
+      >
         {' '}
         <label htmlFor="searchAdvice">
           <h1>Search Advice</h1>
         </label>
       </div>
-      <div>
+      <div
+        className={
+          'flex justify-center items-center h-2/6 border-4 border-red w-full gap-1'
+        }
+      >
         {' '}
         <input
           id="searchAdvice"
           value={text}
           onChange={(event) => setText(event.target.value)}
-          className={'w-96 h-12 rounded-lg'}
+          className={'w-[30rem] h-12 rounded-lg'}
         />{' '}
         <button
           className={
@@ -36,6 +48,6 @@ export default function SearchTerm({
           Search
         </button>
       </div>
-    </section>
+    </article>
   );
 }
