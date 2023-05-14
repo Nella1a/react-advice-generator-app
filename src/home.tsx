@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './components/Button';
-import Layout from './components/layout';
+import Layout from './components/Layout';
 
-export default function Home() {
-  return (
-    <Layout>
-      <Link to="/get-advice">
-        <Button text={'Get Advice'} />
-      </Link>
-      <Link to="/search-advice">
-        {' '}
-        <Button text={'Search Advice'} />
-      </Link>
-    </Layout>
-  );
+class Home extends Component {
+  render() {
+    return (
+      <Layout>
+        <Link to="/advice/get-advice">
+          <Button text={'Get Random Advice'} />
+        </Link>
+        <Link to="/advice/search-advice">
+          {' '}
+          <Button text={'Search Advice'} />
+        </Link>
+      </Layout>
+    );
+  }
 }
+
+export default Home;
