@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageComp from './ImageComp';
+import ImageComp from '../ImageComp';
 
 type Props = {
   onClickHandler: () => void;
