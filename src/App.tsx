@@ -1,5 +1,5 @@
 import React from 'react';
-import { FetcherWithComponents, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import RandomAdvice from './components/RandomAdvice';
 import SearchAdvice from './components/SearchAdvice';
 import ErrorPage from './errorPage';
