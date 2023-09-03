@@ -28,6 +28,7 @@ class RandomAdvice extends Component<{}, InitialState> {
   fetchRandomAdvise = async () => {
     console.log('fetc');
     try {
+      this.setState({ randomAdvice: { id: undefined, advice: '' } });
       const response = await fetch('https://api.adviceslip.com/advice', {
         method: 'GET',
       });
