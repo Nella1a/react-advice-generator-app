@@ -35,24 +35,16 @@ class SearchTerm extends Component<Props, {}> {
     return (
       <article
         className={
-          'flex flex-col justify-center items-center border-8 border-yellow gap-8 h-2/6 w-full'
+          'flex flex-col justify-center items-center gap-8 h-2/6 w-full'
         }
       >
-        <div
-          className={
-            'text-center border-4 border-red h-1/6 w-full text-quote-size'
-          }
-        >
+        <div className={'text-center  h-1/6 w-full text-quote-size'}>
           {' '}
           <label htmlFor="searchAdvice">
             <h1>Search Advice</h1>
           </label>
         </div>
-        <div
-          className={
-            'flex justify-center items-center h-2/6 border-4 border-red w-full gap-1'
-          }
-        >
+        <div className={'flex justify-center items-center h-2/6 w-full gap-1'}>
           {' '}
           <input
             id="searchAdvice"

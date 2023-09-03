@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from './components/Button';
+import ButtonLarge from './components/ButtonLarge';
 import Layout from './components/Layout';
 
 class Home extends Component {
@@ -8,11 +8,11 @@ class Home extends Component {
     return (
       <Layout>
         <Link to="/advice/get-advice">
-          <Button text={'Get Random Advice'} />
+          <ButtonLarge text={'Get Random Advice'} />
         </Link>
         <Link to="/advice/search-advice">
           {' '}
-          <Button text={'Search Advice'} />
+          <ButtonLarge text={'Search Advice'} />
         </Link>
       </Layout>
     );
