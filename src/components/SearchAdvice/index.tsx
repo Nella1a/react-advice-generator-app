@@ -73,7 +73,7 @@ class SearchAdvice extends Component<{}, InitialState> {
       <Layout>
         <section
           className={
-            'flex flex-col ustify-center items-center border-4 border-white gap-4 h-screen w-1/2'
+            'flex flex-col ustify-center items-center gap-4 h-screen w-full'
           }
         >
           <SearchTerm
