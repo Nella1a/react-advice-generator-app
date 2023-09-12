@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 type ImageProps = {
   src: string;
@@ -7,11 +7,8 @@ type ImageProps = {
   height: string;
 };
 
-class ImageComp extends Component<ImageProps> {
-  render() {
-    const { src, description, width, height } = this.props;
-    return <img src={src} alt={description} width={width} height={height} />;
-  }
-}
+const ImageComp = ({ src, description, width, height }: ImageProps) => {
+  return <img src={src} alt={description} width={width} height={height} />;
+};
 
 export default ImageComp;
