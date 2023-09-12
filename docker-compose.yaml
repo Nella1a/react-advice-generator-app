@@ -3,3 +3,7 @@ services:
     image: kanjaallen/react-advice-generator:1.0
     ports:
       - 3000:3000
+  webserver:
+    image: nginx:alpine
+    ports:
+      - 8000:8000
