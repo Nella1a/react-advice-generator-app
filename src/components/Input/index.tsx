@@ -10,7 +10,6 @@ type Props = {
 const SearchTerm = (props: Props) => {
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.setText(event.target.value);
-    console.log('text###: ', props.text);
     if (!event.target.value) {
       props.setAdvice();
     }
