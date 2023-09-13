@@ -1,10 +1,4 @@
-import React, { Component } from 'react';
-
-type Advice = {
-  id: number;
-  advice: string;
-  date?: number;
-};
+import React from 'react';
 
 type Props = {
   text: string;
@@ -13,58 +7,45 @@ type Props = {
   setAdvice: () => void;
 };
 
-class SearchTerm extends Component<Props, {}> {
-  constructor(props: Props) {
-    super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
-
-  handleOnChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const searchString = event.target.value;
-    this.props.setText(event.target.value);
-    console.log('text###: ', this.props.text);
+const SearchTerm = (props: Props) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    props.setText(event.target.value);
+    console.log('text###: ', props.text);
     if (!event.target.value) {
-      console.log('YES');
-      this.props.setAdvice();
+      props.setAdvice();
     }
-  }
+  };
 
-  render() {
-    const { text, onClickHandlerSearch, setText } = this.props;
-    // console.log('text: ', text);
-    return (
-      <article
-        className={
-          'flex flex-col justify-center items-center gap-8 h-2/6 w-full'
-        }
-      >
-        <div className={'text-center  h-1/6 w-full text-quote-size'}>
-          {' '}
-          <label htmlFor="searchAdvice">
-            <h1>Search Advice</h1>
-          </label>
-        </div>
-        <div className={'flex justify-center items-center h-2/6 w-full gap-1'}>
-          {' '}
-          <input
-            id="searchAdvice"
-            type="search"
-            value={text}
-            onChange={this.handleOnChange}
-            className={'w-[30rem] h-12 rounded-lg pl-5 text-black'}
-          />{' '}
-          <button
-            className={
-              'w-32 h-12  text-center text-dark-blue font-manrope bg-neon-green hover:shadow-3xl hover:bg-neon-green font-bold rounded-lg'
-            }
-            onClick={onClickHandlerSearch}
-          >
-            Search
-          </button>
-        </div>
-      </article>
-    );
-  }
-}
+  return (
+    <article
+      className={'flex flex-col justify-center items-center gap-8 h-2/6 w-full'}
+    >
+      <div className={'text-center  h-1/6 w-full text-quote-size'}>
+        {' '}
+        <label htmlFor="searchAdvice">
+          <h1>Search Advice</h1>
+        </label>
+      </div>
+      <div className={'flex justify-center items-center h-2/6 w-full gap-1'}>
+        {' '}
+        <input
+          id="searchAdvice"
+          type="search"
+          value={props.text}
+          onChange={handleOnChange}
+          className={'w-[30rem] h-12 rounded-lg pl-5 text-black'}
+        />{' '}
+        <button
+          className={
+            'w-32 h-12  text-center text-dark-blue font-manrope bg-neon-green hover:shadow-3xl hover:bg-neon-green font-bold rounded-lg'
+          }
+          onClick={props.onClickHandlerSearch}
+        >
+          Search
+        </button>
+      </div>
+    </article>
+  );
+};
 
 export default SearchTerm;
