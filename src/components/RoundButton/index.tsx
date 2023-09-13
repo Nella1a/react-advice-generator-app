@@ -5,7 +5,7 @@ type Props = {
   onClickHandler: () => void;
 };
 
-function RoundButton({ onClickHandler }: Props) {
+const RoundButton = ({ onClickHandler }: Props) => {
   return (
     <button
       className="absolute z-10 -bottom-10 left-50% bg-neon-green
@@ -22,6 +22,6 @@ function RoundButton({ onClickHandler }: Props) {
       />
     </button>
   );
-}
+};
 
 export default RoundButton;
