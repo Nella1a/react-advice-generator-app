@@ -9,7 +9,7 @@ const Button = ({ text }: Props) => {
     <>
       <button
         className={
-          'w-32 h-12  text-center text-dark-blue font-manrope bg-neon-green hover:shadow-3xl hover:bg-neon-green font-bold rounded-lg'
+          'w-32 h-12  text-center text-dark-blue font-manrope bg-neon-green font-bold hover:text-pink-600 rounded-lg'
         }
       >
         {text}
