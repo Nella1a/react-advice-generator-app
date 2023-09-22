@@ -55,9 +55,7 @@ const SearchAdvice = () => {
   return (
     <Layout>
       <section
-        className={
-          'flex flex-col ustify-center items-center gap-4 h-screen w-full'
-        }
+        className={'flex flex-col ustify-center items-center  h-screen w-full'}
       >
         <SearchTerm
           searchTerm={searchTerm}
@@ -65,7 +63,7 @@ const SearchAdvice = () => {
           onChangeHandler={onChangeHandler}
         />
         {error ? (
-          <h1>{error?.text}</h1>
+          <h2 className="font-semibold">{error?.text}</h2>
         ) : (
           advice &&
           advice.slips?.length > 0 && <SearchResults result={advice} />
