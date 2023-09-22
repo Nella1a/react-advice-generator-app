@@ -12,7 +12,7 @@ type Props = {
 const SearchTerm = (props: Props) => {
   return (
     <article
-      className={'flex flex-col justify-center items-center gap-8 h-2/6 w-full'}
+      className={'flex flex-col justify-end items-end gap-8 h-2/6 w-full'}
     >
       <div className={'text-center  h-1/6 w-full text-quote-size'}>
         {' '}
