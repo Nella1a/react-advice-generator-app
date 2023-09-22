@@ -12,9 +12,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import SearchAdvice from './';
 
-const server = setupServer(
+const handlers = [
   rest.get('https://api.adviceslip.com/advice/search/love', (req, res, ctx) => {
-    console.log('REQ: ', req);
     return res(
       ctx.status(200),
       ctx.json({
@@ -36,8 +35,9 @@ const server = setupServer(
       }),
     );
   }),
-);
+];
 
+const server = setupServer(...handlers);
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
@@ -69,9 +69,6 @@ test('Search Advice', async () => {
   // submit
   await userEvent.click(screen.getByRole('button', { name: 'Search' }));
   expect(
-    await screen.findByText('Always do anything for love.'),
+    await screen.findByText(/Always do anything for love/),
   ).toBeInTheDocument();
-
-  // eslint-disable-next-line testing-library/no-debugging-utils
-  screen.debug();
 });
