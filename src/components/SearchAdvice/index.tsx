@@ -1,53 +1,57 @@
 import React, { useEffect, useState } from 'react';
-import { Advice, Error } from '../../types/types';
+import { Error, SearchAdviceType } from '../../types/types';
 import SearchTerm from '../Input';
 import Layout from '../Layout';
 import SearchResults from '../SearchResults';
 
+export const setErrorMessage = (
+  error: Error,
+  setError: ({ text, type }: Error) => void,
+) => {
+  const { text, type } = error;
+  setError({ type, text });
+  console.log('error: ', error.text);
+};
+
 const SearchAdvice = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [text, setText] = useState('');
-  const [advice, setAdvice] = useState<Advice[]>([]);
-  const [message, setMessage] = useState<Error | undefined>(undefined);
+  const [search, setSearch] = useState(false);
+  const [advice, setAdvice] = useState<SearchAdviceType>(undefined);
+  const [error, setError] = useState<Error>(undefined);
 
-  const onClickHandlerSearch = () => {
-    if (text) {
-      setSearchTerm(text);
-      setAdvice([]);
+  const onClickHandlerSearch = (event: any) => {
+    if (searchTerm) {
+      setSearch(true);
     }
+    setAdvice(undefined);
   };
 
-  const onChangeHandler = (event: string) => {
-    setText(event);
-  };
-
-  const cleanUp = () => {
-    setAdvice([]);
-    setMessage(undefined);
+  const onChangeHandler = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setSearchTerm(event.target.value);
+    setAdvice(undefined);
+    setError(undefined);
   };
 
   useEffect(() => {
-    const fetchAdvice = (searchTerm: string) => {
+    if (searchTerm && search) {
       fetch(`https://api.adviceslip.com/advice/search/${searchTerm}`)
-        .then((result) => result.json())
-        .then((apiResponse) => {
-          console.log(apiResponse);
-          if ('message' in apiResponse) {
-            setMessage(apiResponse.message);
+        .then((response) => response.json())
+        .then((result) => {
+          if ('slips' in result) {
+            setAdvice(result);
           } else {
-            setAdvice(apiResponse.slips);
+            setErrorMessage(result.message, setError);
           }
         })
         .catch((error) => {
-          alert(error);
+          setErrorMessage(error.message, setError);
         });
-    };
-    if (searchTerm) {
-      fetchAdvice(searchTerm);
+      setSearch(false);
     }
-  }, [searchTerm]);
+  }, [searchTerm, search]);
 
-  console.log({ message });
   return (
     <Layout>
       <section
@@ -56,15 +60,15 @@ const SearchAdvice = () => {
         }
       >
         <SearchTerm
-          text={text}
+          searchTerm={searchTerm}
           onClickHandlerSearch={onClickHandlerSearch}
-          setText={onChangeHandler}
-          setAdvice={cleanUp}
+          onChangeHandler={onChangeHandler}
         />
-        {message ? (
-          <h1>{message?.text}</h1>
+        {error ? (
+          <h1>{error?.text}</h1>
         ) : (
-          advice && advice?.length > 0 && <SearchResults result={advice} />
+          advice &&
+          advice.slips?.length > 0 && <SearchResults result={advice} />
         )}
       </section>
     </Layout>
