@@ -1,20 +1,14 @@
 import React from 'react';
 
 type Props = {
-  text: string;
-  onClickHandlerSearch: () => void;
-  setText: (event: string) => void;
-  setAdvice: () => void;
+  searchTerm: string;
+  onClickHandlerSearch: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => void;
+  onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const SearchTerm = (props: Props) => {
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.setText(event.target.value);
-    if (!event.target.value) {
-      props.setAdvice();
-    }
-  };
-
   return (
     <article
       className={'flex flex-col justify-center items-center gap-8 h-2/6 w-full'}
@@ -30,8 +24,8 @@ const SearchTerm = (props: Props) => {
         <input
           id="searchAdvice"
           type="search"
-          value={props.text}
-          onChange={handleOnChange}
+          value={props.searchTerm}
+          onChange={props.onChangeHandler}
           className={'w-[30rem] h-12 rounded-lg pl-5 text-black'}
         />{' '}
         <button
