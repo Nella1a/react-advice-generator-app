@@ -1,17 +1,16 @@
 import React from 'react';
-import { Advice } from '../../types/types';
+import { SearchAdviceType } from '../../types/types';
 
 type Props = {
-  result: Advice[];
+  result: SearchAdviceType;
 };
 
 const SearchResults = ({ result }: Props) => {
-  console.log('result: ', result);
   return (
     <>
       <article className={'w-full'}>
         <div className={'flex flex-col justify-center items-center text-white'}>
-          {result.map((advice) => {
+          {result.slips.map((advice) => {
             return (
               <div
                 key={`${advice.id}`}
