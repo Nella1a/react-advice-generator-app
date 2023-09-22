@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button';
 
 type Props = {
   searchTerm: string;
@@ -28,14 +29,7 @@ const SearchTerm = (props: Props) => {
           onChange={props.onChangeHandler}
           className={'w-[30rem] h-12 rounded-lg pl-5 text-black'}
         />{' '}
-        <button
-          className={
-            'w-32 h-12  text-center text-dark-blue font-manrope bg-neon-green hover:shadow-3xl hover:bg-neon-green font-bold rounded-lg'
-          }
-          onClick={props.onClickHandlerSearch}
-        >
-          Search
-        </button>
+        <Button text={'Search'} onClickHandler={props.onClickHandlerSearch} />
       </div>
     </article>
   );
