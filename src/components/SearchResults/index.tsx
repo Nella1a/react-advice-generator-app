@@ -14,7 +14,7 @@ const SearchResults = ({ result }: Props) => {
             return (
               <div
                 key={`${advice.id}`}
-                className="flex text-white-500  bg-dark-grayish-blue rounded-xl font-manrope my-5 px-8 pt-4 pb-4  drop-shadow-xl w-[38rem]"
+                className="flex text-white-500  bg-dark-grayish-blue rounded-xl font-manrope my-2 px-8 pt-4 pb-4 drop-shadow-xl w-[38rem]"
               >
                 <span className={'text-neon-green font-bold'}>
                   #{advice.id}
