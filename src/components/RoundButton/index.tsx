@@ -9,7 +9,7 @@ const RoundButton = ({ onClickHandler }: Props) => {
   return (
     <button
       className="absolute z-10 -bottom-10 left-50% bg-neon-green
-    hover:shadow-3xl hover:bg-neon-green
+    hover:bg-green-100
     rounded-full w-20 h-20 margin-auto flex justify-center items-center sm:w-16 sm:h-16 sm:-bottom-7"
       onClick={onClickHandler}
     >

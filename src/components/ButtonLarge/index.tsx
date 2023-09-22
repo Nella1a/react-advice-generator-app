@@ -9,7 +9,7 @@ const ButtonLarge = ({ text }: Props) => {
     <>
       <button
         className={
-          'w-44 h-12  text-center text-dark-blue font-manrope bg-neon-green font-bold hover:text-pink-600 rounded-lg'
+          'w-44 h-12  text-center text-dark-blue font-manrope bg-neon-green font-bold hover:bg-green-100 rounded-lg'
         }
       >
         {text}
