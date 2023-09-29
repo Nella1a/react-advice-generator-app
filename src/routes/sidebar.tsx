@@ -13,8 +13,8 @@ const Sidebar = () => {
   }, [urlPath]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-dark-blue text-light-cyan w-full">
-      <section className="w-1/5 min-h-screen flex flex-col justify-center items-center gap-6">
+    <div className="flex flex-col  md:flex-row justify-center items-center md:min-h-screen bg-dark-blue text-light-cyan w-full">
+      <section className="w-11/12 h-28 md:w-1/5 md:min-h-screen flex md:flex-col justify-center  items-center gap-6 border-8 border-red">
         <div>
           <Link to="/">
             <Button text={'home'} />
@@ -35,7 +35,7 @@ const Sidebar = () => {
           </div>
         )}
       </section>
-      <section className="w-4/5">
+      <section className="w-11/12 md:w-4/5 border-8 border-green">
         {' '}
         <Outlet />
       </section>
