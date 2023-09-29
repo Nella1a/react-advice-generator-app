@@ -10,7 +10,6 @@ export const setErrorMessage = (
 ) => {
   const { text, type } = error;
   setError({ type, text });
-  console.log('error: ', error.text);
 };
 
 const SearchAdvice = () => {
