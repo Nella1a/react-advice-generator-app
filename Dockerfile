@@ -1,14 +1,12 @@
-FROM node:20-alpine as builder
+FROM node:20-alpine
 WORKDIR /app
 COPY package.json .
-COPY yarn.lock .
-RUN yarn install
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-COPY /nginx/nginx.conf /etc/nginx/nginx.conf
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/build /usr/share/nginx/html
-EXPOSE 8000
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install
+COPY tailwind.config.js .
+COPY tsconfig.json .
+COPY jest.config.js .
+COPY jest.setup.js .
+COPY babel.config.js .
+COPY src/ ./src/
+COPY public/ ./public/
+CMD ["npm", "start"]
