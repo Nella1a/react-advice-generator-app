@@ -38,7 +38,7 @@ const GetRandomAdvice = () => {
   };
   return (
     <Layout>
-      <div className="w-full h-[53rem] flex flex-col items-center md:w-11/12">
+      <div className="w-full  flex flex-col items-center md:w-11/12">
         <h1 className="text-headingOne font-extrabold font-manrope mt-10 mb-6  md:mt-0 w-full text-center">
           Get Random Advice
         </h1>
@@ -46,7 +46,7 @@ const GetRandomAdvice = () => {
           <h1 className="text-neon-green  tracking-[0.2rem] text-center font-semibold">
             ADVICE #{randomAdvice?.id}
           </h1>
-          <p className="h-[12rem] flex justify-center items-center text-quote-size text-light-cyan m-auto font-extrabold my-6 sm:h-[5rem] sm:min-h-0 ">
+          <p className="h-[12rem] flex justify-center items-center text-quote-size text-light-cyan m-auto font-extrabold my-6 sm:h-[5rem] sm:min-h-0">
             {loading ? (
               <span>is loading...</span>
             ) : !error ? (

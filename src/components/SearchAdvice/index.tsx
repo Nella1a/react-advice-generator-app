@@ -56,7 +56,7 @@ const SearchAdvice = () => {
       <section
         className={'flex flex-col justify-center items-center  h-screen w-full'}
       >
-        <div className="w-full md:w-11/12 h-full md:h-[53rem] flex flex-col items-center m-auto">
+        <div className="w-full md:w-11/12 flex flex-col items-center md:m-auto  h-full md:h-fit">
           <SearchTerm
             searchTerm={searchTerm}
             onClickHandlerSearch={onClickHandlerSearch}
