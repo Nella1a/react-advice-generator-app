@@ -11,16 +11,16 @@ type Props = {
 
 const SearchTerm = (props: Props) => {
   return (
-    <article
-      className={'flex flex-col justify-end items-end gap-8 h-2/6 w-full'}
-    >
-      <div className={'text-center  h-1/6 w-full text-quote-size'}>
+    <>
+      <div className={'text-center w-full text-quote-size'}>
         {' '}
-        <label htmlFor="searchAdvice">
-          <h1>Search Advice</h1>
+        <label htmlFor="searchAdvice ">
+          <h1 className="text-headingOne font-extrabold font-manrope mb-6 mt-10 md:mt-0">
+            Search Advice
+          </h1>
         </label>
       </div>
-      <div className={'flex justify-center items-center h-2/6 w-full gap-1'}>
+      <div className={'flex justify-center items-center w-full gap-1'}>
         {' '}
         <input
           id="searchAdvice"
@@ -31,7 +31,7 @@ const SearchTerm = (props: Props) => {
         />{' '}
         <Button text={'Search'} onClickHandler={props.onClickHandlerSearch} />
       </div>
-    </article>
+    </>
   );
 };
 

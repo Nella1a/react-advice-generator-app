@@ -14,7 +14,7 @@ module.exports = {
         '3xl': '0 0px 30px 5px rgba(82, 225, 168, 0.5)',
       },
 
-      fontSize: { 'quote-size': '28px' },
+      fontSize: { 'quote-size': '24px', headingOne: '28px' },
       fontWeight: 800,
       fontFamily: {
         manrope: ['manrope', 'system-ui'],

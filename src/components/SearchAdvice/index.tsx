@@ -54,19 +54,23 @@ const SearchAdvice = () => {
   return (
     <Layout>
       <section
-        className={'flex flex-col ustify-center items-center  h-screen w-full'}
+        className={'flex flex-col justify-center items-center  h-screen w-full'}
       >
-        <SearchTerm
-          searchTerm={searchTerm}
-          onClickHandlerSearch={onClickHandlerSearch}
-          onChangeHandler={onChangeHandler}
-        />
-        {error ? (
-          <h2 className="font-semibold">{error?.text}</h2>
-        ) : (
-          advice &&
-          advice.slips?.length > 0 && <SearchResults result={advice} />
-        )}
+        <div className="w-full md:w-11/12 h-full md:h-[53rem] flex flex-col items-center m-auto">
+          <SearchTerm
+            searchTerm={searchTerm}
+            onClickHandlerSearch={onClickHandlerSearch}
+            onChangeHandler={onChangeHandler}
+          />
+          {error ? (
+            <h2 className="font-semibold w-full text-center mt-10 text-xl">
+              {error?.text}
+            </h2>
+          ) : (
+            advice &&
+            advice.slips?.length > 0 && <SearchResults result={advice} />
+          )}
+        </div>
       </section>
     </Layout>
   );
