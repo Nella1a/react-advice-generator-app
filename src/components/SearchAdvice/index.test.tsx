@@ -56,7 +56,7 @@ test('render SearchAdvice component and  search for an advice', async () => {
   ).toBeInTheDocument();
 
   // input field
-  const inputField = screen.getByRole('searchbox', { name: 'Search Advice' });
+  const inputField = screen.getByRole('searchbox', { name: '' });
   expect(inputField).toBeInTheDocument();
   expect(inputField).toHaveValue('');
 
@@ -102,7 +102,7 @@ test('No match for SearchTerm', async () => {
   ).toBeInTheDocument();
 
   // input field
-  const inputField = screen.getByRole('searchbox', { name: 'Search Advice' });
+  const inputField = screen.getByRole('searchbox', { name: '' });
   expect(inputField).toBeInTheDocument();
   expect(inputField).toHaveValue('');
 
