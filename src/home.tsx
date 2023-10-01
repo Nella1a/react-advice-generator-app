@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ButtonLarge from './components/ButtonLarge';
-import Layout from './components/Layout';
+import Layout from './components/layout';
 
 const Home = () => {
   return (

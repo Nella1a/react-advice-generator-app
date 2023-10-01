@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Error, SearchAdviceType } from '../../types/types';
 import SearchTerm from '../Input';
-import Layout from '../Layout';
+import Layout from '../layout';
 import SearchResults from '../SearchResults';
 
 export const setErrorMessage = (

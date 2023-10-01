@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Error, RandomAdvice } from '../../types/types';
 import ImageComp from '../ImageComp';
-import Layout from '../Layout';
+import Layout from '../layout';
 import RoundButton from '../RoundButton';
 import { setErrorMessage } from '../SearchAdvice';
 
