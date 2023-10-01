@@ -17,20 +17,20 @@ const Sidebar = () => {
       <section className="w-1/12  md:w-1/5 flex justify-center md:justify-start md:flex-col items-center gap-6  m-auto pt-3">
         <div>
           <Link to="/">
-            <Button text={'home'} />
+            <Button text={'Home'} />
           </Link>
         </div>
 
         {currentUrl === 'search-advice' ? (
           <div>
             <Link to="get-advice">
-              <Button text={'random advice'} />
+              <Button text={'Random Advice'} />
             </Link>
           </div>
         ) : (
           <div>
             <Link to="search-advice">
-              <Button text={'search advice'} />
+              <Button text={'Search Advice'} />
             </Link>
           </div>
         )}
