@@ -6,20 +6,20 @@ This project is based on a [Frontend Mentor](https://www.frontendmentor.io/home)
 
 1. Clone the repository
 
-```git clone https://github.com/Nella1a/react-advice-generator-app.git
-
+```
+git clone https://github.com/Nella1a/react-advice-generator-app.git
 ```
 
 2. Install dependencies
 
-```npm run install
-
+```
+npm run install
 ```
 
 3. Run application
 
-```npm run start
-
+```
+npm run start
 ```
 
 4. Open <http://localhost:3000> on your browser.
@@ -30,8 +30,8 @@ This project is based on a [Frontend Mentor](https://www.frontendmentor.io/home)
 1. To simple start the application run in your terminal the following command which will
    run an instance of the image and expose it on port 3000:
 
-```docker container run -p 3000:3000 kanjaallen/react-advice-generator:1.2
-
+```
+docker container run -p 3000:3000 kanjaallen/react-advice-generator:1.2
 ```
 
 3. Open <http://localhost:3000> on your browser.
