@@ -10,19 +10,19 @@ This project is based on a [Frontend Mentor](https://www.frontendmentor.io/home)
 
 ```
 
-1. Install dependencies
+2. Install dependencies
 
 ```npm run install
 
 ```
 
-1. Run application
+3. Run application
 
 ```npm run start
 
 ```
 
-1. Open <http://localhost:3000> on your browser.
+4. Open <http://localhost:3000> on your browser.
 
 ## Docker
 
@@ -34,7 +34,7 @@ This project is based on a [Frontend Mentor](https://www.frontendmentor.io/home)
 
 ```
 
-1. Open <http://localhost:3000> on your browser.
+3. Open <http://localhost:3000> on your browser.
 
 ## Technologies
 
