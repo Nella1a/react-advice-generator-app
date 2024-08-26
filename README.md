@@ -1,6 +1,11 @@
 # react-advice-generator-app
 
-This project is based on a [Frontend Mentor](https://www.frontendmentor.io/home) challenge, which involves building an advice generator app using the [Advice Slip API](https://api.adviceslip.com/). I have extended the challenge for myself to practice working with APIs. Besides requesting general advice, I have added the option to search for advice using a keyword. Additionally, I have created a Docker image of the app to practice this as well.
+This project is inspired by a [Frontend Mentor](https://www.frontendmentor.io/home) challenge, which involves creating an advice generator app using the [Advice Slip API](https://api.adviceslip.com/).
+
+I extended the challenge to enhance my skills in working with APIs and dockerizing applications. In addition to fetching general advice, I've implemented features like searching for advice by keyword. Additionally, I also built this app using a different tech stack and created a Docker image of the application to further enhance my skills.
+You can find the Nextjs version of the advice generator app [here](https://github.com/Nella1a/nextjs-advice-generator-app).
+
+
 
 ## Setup
 
