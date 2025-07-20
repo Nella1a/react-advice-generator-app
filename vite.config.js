@@ -12,4 +12,8 @@ export default defineConfig({
     setupFiles: './src/setupTests.js',
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+  },
 });
