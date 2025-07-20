@@ -6,24 +6,20 @@ import 'whatwg-fetch';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import RandomAdvice from './';
 
 const handlers = [
-  rest.get('https://api.adviceslip.com/advice', (req, res, ctx) => {
-    return res(
-      ctx.body(
-        JSON.stringify({
-          slip: {
-            id: 224,
-            advice: 'Mocked random advice.',
-          },
-        }),
-      ),
-    );
+  http.get('https://api.adviceslip.com/advice', () => {
+    return HttpResponse.json({
+      slip: {
+        id: 224,
+        advice: 'Mocked random advice.',
+      },
+    });
   }),
 ];
 
@@ -62,17 +58,13 @@ test('get random advice', async () => {
   const requestAdviceButton = screen.getByRole('button', { name: 'icon dice' });
   server.resetHandlers();
   server.use(
-    rest.get('https://api.adviceslip.com/advice', (req, res, ctx) => {
-      return res(
-        ctx.body(
-          JSON.stringify({
-            slip: {
-              id: 201,
-              advice: 'Mocked random advice two.',
-            },
-          }),
-        ),
-      );
+    http.get('https://api.adviceslip.com/advice', () => {
+      return HttpResponse.json({
+        slip: {
+          id: 201,
+          advice: 'Mocked random advice two.',
+        },
+      });
     }),
   );
 
