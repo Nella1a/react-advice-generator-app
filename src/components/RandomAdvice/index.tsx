@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Error, RandomAdvice } from '../../types/types';
+import { ApiError, RandomAdvice } from '../../types';
 import ImageComp from '../ImageComp';
 import Layout from '../layout';
 import RoundButton from '../RoundButton';
@@ -12,7 +12,7 @@ export type APIRandomAdvice = {
 const GetRandomAdvice = () => {
   const [loading, setLoading] = useState(false);
   const [randomAdvice, setRandomAdvice] = useState<RandomAdvice>();
-  const [error, setError] = useState<Error>(undefined);
+  const [error, setError] = useState<ApiError>(undefined);
 
   useEffect(() => {
     fetch('https://api.adviceslip.com/advice')
