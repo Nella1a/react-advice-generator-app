@@ -1,13 +1,8 @@
-/**
- * @jest-environment jsdom
- * @jest-environment-options {"url": "https://localhost"}
- */
-
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Home from '../home.tsx';
+import Home from './home.js';
 
 test('two buttons on screen', async () => {
   render(

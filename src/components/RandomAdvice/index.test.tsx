@@ -1,40 +1,17 @@
-/**
- * @jest-environment jsdom
- * @jest-environment-options {"url": "https://localhost"}
- */
 import 'whatwg-fetch';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import { http, HttpResponse } from 'msw';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { vi } from 'vitest';
+import { server } from '../../mocks/node.js';
 import RandomAdvice from './';
-
-const handlers = [
-  rest.get('https://api.adviceslip.com/advice', (req, res, ctx) => {
-    return res(
-      ctx.body(
-        JSON.stringify({
-          slip: {
-            id: 224,
-            advice: 'Mocked random advice.',
-          },
-        }),
-      ),
-    );
-  }),
-];
-
-const server = setupServer(...handlers);
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
 
 test('renders the RandomAdvice component', async () => {
   // mock window alert
-  global.alert = jest.fn();
+  global.alert = vi.fn();
   render(
     <BrowserRouter>
       <RandomAdvice />
@@ -48,7 +25,7 @@ test('renders the RandomAdvice component', async () => {
 
 test('get random advice', async () => {
   // mock window alert
-  global.alert = jest.fn();
+  global.alert = vi.fn();
 
   render(
     <BrowserRouter>
@@ -62,17 +39,13 @@ test('get random advice', async () => {
   const requestAdviceButton = screen.getByRole('button', { name: 'icon dice' });
   server.resetHandlers();
   server.use(
-    rest.get('https://api.adviceslip.com/advice', (req, res, ctx) => {
-      return res(
-        ctx.body(
-          JSON.stringify({
-            slip: {
-              id: 201,
-              advice: 'Mocked random advice two.',
-            },
-          }),
-        ),
-      );
+    http.get('https://api.adviceslip.com/advice', () => {
+      return HttpResponse.json({
+        slip: {
+          id: 201,
+          advice: 'Mocked random advice two.',
+        },
+      });
     }),
   );
 

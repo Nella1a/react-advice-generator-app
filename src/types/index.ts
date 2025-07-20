@@ -9,13 +9,13 @@ export type RandomAdvice = {
   advice: string;
 };
 
-export type Error = {
+export type ApiError = {
   type?: string;
   text?: string;
 };
 
 export type RandomAdviceApiResponse =
   | { slip: RandomAdvice }
-  | { message: Error };
+  | { message: ApiError };
 
-export type SearchAdviceApiResponse = SearchAdviceType | { message: Error };
+export type SearchAdviceApiResponse = SearchAdviceType | { message: ApiError };

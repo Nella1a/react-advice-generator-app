@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchAdviceType } from '../../types/types';
+import { SearchAdviceType } from '../../types';
 
 type Props = {
   result: SearchAdviceType;
