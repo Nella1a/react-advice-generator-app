@@ -1,3 +1,4 @@
+***Please note that this project is currently under active development. The codebase is subject to change and continuous improvement.***
 # react-advice-generator-app
 
 This project is inspired by a [Frontend Mentor](https://www.frontendmentor.io/home) challenge, which involves creating an advice generator app using the [Advice Slip API](https://api.adviceslip.com/).
@@ -7,8 +8,7 @@ You can find the Nextjs version [here](https://github.com/Nella1a/nextjs-advice-
 
 ## Setup
 
-1. Clone the repository
-   First, clone the repository. Then, you can run the application either using Docker or locally (without Docker).
+1. First, clone the repository. Then, you can run the application either using Docker or locally (without Docker).
 
 ```text
 git clone https://github.com/Nella1a/react-advice-generator-app.git
@@ -42,7 +42,7 @@ Run application
 npm run dev --host
 ```
 
-Open <http://localhost:3000> on your browser.
+Open <http://localhost:5173> on your browser.
 
 ## Technologies
 
