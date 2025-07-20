@@ -1,43 +1,12 @@
-/**
- * @jest-environment jsdom
- * @jest-environment-options {"url": "https://localhost"}
- */
 import 'whatwg-fetch';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { server } from '../../mocks/node.js';
 import SearchAdvice from './';
-
-const handlers = [
-  http.get('https://api.adviceslip.com/advice/search/love', () => {
-    return HttpResponse.json({
-      total_results: '3',
-      query: 'love',
-      slips: [
-        {
-          id: 101,
-          advice: 'Always do anything for love.',
-          date: '2015-12-08',
-        },
-        { id: 174, advice: 'Be a good lover.', date: '2014-06-03' },
-        {
-          id: 184,
-          advice: 'Take a chance on doing what you love.',
-          date: '2017-03-10',
-        },
-      ],
-    });
-  }),
-];
-
-const server = setupServer(...handlers);
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
 
 test('render SearchAdvice component and  search for an advice', async () => {
   render(

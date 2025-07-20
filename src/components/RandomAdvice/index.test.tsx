@@ -1,36 +1,17 @@
-/**
- * @jest-environment jsdom
- * @jest-environment-options {"url": "https://localhost"}
- */
 import 'whatwg-fetch';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { vi } from 'vitest';
+import { server } from '../../mocks/node.js';
 import RandomAdvice from './';
-
-const handlers = [
-  http.get('https://api.adviceslip.com/advice', () => {
-    return HttpResponse.json({
-      slip: {
-        id: 224,
-        advice: 'Mocked random advice.',
-      },
-    });
-  }),
-];
-
-const server = setupServer(...handlers);
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
 
 test('renders the RandomAdvice component', async () => {
   // mock window alert
-  global.alert = jest.fn();
+  global.alert = vi.fn();
   render(
     <BrowserRouter>
       <RandomAdvice />
@@ -44,7 +25,7 @@ test('renders the RandomAdvice component', async () => {
 
 test('get random advice', async () => {
   // mock window alert
-  global.alert = jest.fn();
+  global.alert = vi.fn();
 
   render(
     <BrowserRouter>
