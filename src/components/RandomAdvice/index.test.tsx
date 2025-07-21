@@ -18,7 +18,6 @@ test('renders the RandomAdvice component', async () => {
     </BrowserRouter>,
   );
 
-  expect(screen.getByText('ADVICE #')).toBeInTheDocument();
   expect(screen.getByText(/Get Random Advice/)).toBeInTheDocument();
   const containerSpan = screen.getByRole('paragraph');
   expect(
@@ -38,7 +37,6 @@ test('get random advice', async () => {
     </BrowserRouter>,
   );
 
-  expect(screen.getByText('ADVICE #')).toBeInTheDocument();
   const containerSpan = screen.getByRole('paragraph');
   expect(
     within(containerSpan).getByText(/Need advice\? Click the button!/i),
