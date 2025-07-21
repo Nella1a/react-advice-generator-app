@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { ApiError, SearchAdviceType } from '../../types';
 import SearchTerm from '../Input';
 import Layout from '../layout';
+import Loading from '../LoadingState/index';
+import LoadingMessage from '../LoadingState/index';
 import SearchResults from '../SearchResults';
 
 export const setErrorMessage = (
@@ -70,9 +72,9 @@ const SearchAdvice = () => {
               {error?.text}
             </h2>
           ) : loading ? (
-            <p className="font-semibold w-full text-center mt-10 text-xl">
-              Loading...
-            </p>
+            <LoadingMessage
+              cssClass={'font-semibold w-full text-center mt-10 text-xl'}
+            />
           ) : (
             advice &&
             advice.slips?.length > 0 && <SearchResults result={advice} />
