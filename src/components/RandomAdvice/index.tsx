@@ -29,7 +29,7 @@ const renderAdviceContent = (
   }
 
   if (!randomAdvice?.id) {
-    return <span>"Need advice? Click the button!" </span>;
+    return <span>Need advice? Click the button!</span>;
   }
 
   return <span>&#8220;{randomAdvice.advice}&#8221;</span>;

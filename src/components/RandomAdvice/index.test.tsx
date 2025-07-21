@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
 import React from 'react';
@@ -18,8 +18,13 @@ test('renders the RandomAdvice component', async () => {
     </BrowserRouter>,
   );
 
-  expect(await screen.findByText('ADVICE #224')).toBeInTheDocument();
-  expect(await screen.findByText(/Mocked random advice./)).toBeInTheDocument();
+  expect(screen.getByText('ADVICE #')).toBeInTheDocument();
+  expect(screen.getByText(/Get Random Advice/)).toBeInTheDocument();
+  const containerSpan = screen.getByRole('paragraph');
+  expect(
+    within(containerSpan).getByText(/Need advice\? Click the button!/i),
+  ).toBeInTheDocument();
+
   expect(screen.getByRole('button', { name: 'icon dice' })).toBeInTheDocument();
 });
 
@@ -33,8 +38,11 @@ test('get random advice', async () => {
     </BrowserRouter>,
   );
 
-  expect(await screen.findByText('ADVICE #224')).toBeInTheDocument();
-  expect(await screen.findByText(/Mocked random advice./)).toBeInTheDocument();
+  expect(screen.getByText('ADVICE #')).toBeInTheDocument();
+  const containerSpan = screen.getByRole('paragraph');
+  expect(
+    within(containerSpan).getByText(/Need advice\? Click the button!/i),
+  ).toBeInTheDocument();
 
   const requestAdviceButton = screen.getByRole('button', { name: 'icon dice' });
   server.resetHandlers();
@@ -55,4 +63,8 @@ test('get random advice', async () => {
   expect(
     await screen.findByText(/Mocked random advice two./),
   ).toBeInTheDocument();
+
+  expect(
+    within(containerSpan).queryByText(/Need advice\? Click the button!/i),
+  ).not.toBeInTheDocument();
 });
