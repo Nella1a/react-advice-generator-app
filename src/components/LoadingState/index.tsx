@@ -1,3 +1,6 @@
 import React from 'react';
 
-export const Loading = () => <span>Loading...</span>;
+const LoadingMessage = ({ cssClass }: { cssClass?: string }) => (
+  <span className={cssClass}>Loading...</span>
+);
+export default LoadingMessage;
