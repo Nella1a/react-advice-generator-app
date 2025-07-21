@@ -1,5 +1,5 @@
 services:
   dockerize-react-advice-app:
-    image: kanjaallen/react-advice-generator:2.0
+    image: kanjamn/react-advice-generator:2.0
     ports:
       - '5173:5173'
