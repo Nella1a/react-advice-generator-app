@@ -1,4 +1,5 @@
-***Please note that this project is currently under active development. The codebase is subject to change and continuous improvement.***
+**_Please note that this project is currently under active development. The codebase is subject to change and continuous improvement._**
+
 # react-advice-generator-app
 
 This project is inspired by a [Frontend Mentor](https://www.frontendmentor.io/home) challenge, which involves creating an advice generator app using the [Advice Slip API](https://api.adviceslip.com/).
@@ -47,3 +48,10 @@ Open <http://localhost:5173> on your browser.
 ## Technologies
 
 JavaScript, React, Tailwind CSS, TypeScript, Docker, Vercel
+
+## Screenshots
+
+![Index Page](./public/images/index.png)
+![Get-Random-Page](./public/images/getRandomAdvice.png)
+![Search-Page](./public/images/SearchAdvice.png)
+![Search-Advice-Result-Page](./public/images/SearchAdviceResult.png)
