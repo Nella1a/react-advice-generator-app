@@ -1,6 +1,6 @@
 {
   "name": "react-advice-generator-app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "postcss": "^8.5.6",
