@@ -40,14 +40,14 @@ npm run install
 Run application
 
 ```text
-npm run dev --host
+npm run dev
 ```
 
 Open <http://localhost:5173> on your browser.
 
 ## Technologies
 
-JavaScript, React, Tailwind CSS, TypeScript, Docker, Vercel
+JavaScript, Reac + Vite, Tailwind CSS, TypeScript, Docker, Vercel
 
 ## Screenshots
 
