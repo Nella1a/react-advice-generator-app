@@ -47,7 +47,7 @@ Open <http://localhost:5173> on your browser.
 
 ## Technologies
 
-JavaScript, Reac + Vite, Tailwind CSS, TypeScript, Docker, Vercel
+JavaScript, React + Vite, Tailwind CSS, TypeScript, Docker, Vercel
 
 ## Screenshots
 
