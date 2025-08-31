@@ -1,5 +1,14 @@
 services:
-  dockerize-react-advice-app:
-    image: kanjamn/react-advice-generator:2.0
+  react-advice-app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
     ports:
-      - '5173:5173'
+      - "8080:5173"
+    networks:
+      - react_advice_network
+
+networks:
+  react_advice_network:
