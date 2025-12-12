@@ -1,4 +1,3 @@
-**_Please note that this project is currently under active development. The codebase is subject to change and continuous improvement._**
 
 # react-advice-generator-app
 
