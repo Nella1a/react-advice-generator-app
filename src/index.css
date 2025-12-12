@@ -1,3 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-light-cyan: #cee3e9;
+  --color-neon-green: #52ffa8;
+  --color-dark-blue: #1f2632;
+  --color-grayish-blue: #4e5d73;
+  --color-dark-grayish-blue: #323a49;
+
+  --shadow-3xl: 0 0px 30px 5px rgba(82, 225, 168, 0.5);
+
+  --font-size-quote-size: 24px;
+  --font-size-heading-one: 28px;
+  --font-weight: 800;
+
+  --font-family-manrope: manrope, system-ui;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,10 +29,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
   font-family: 'manrope';
