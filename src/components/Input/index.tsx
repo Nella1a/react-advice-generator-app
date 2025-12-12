@@ -21,14 +21,13 @@ const SearchTerm = (props: Props) => {
         </label>
       </div>
       <div className={'flex justify-center items-center w-full gap-1'}>
-        {' '}
         <input
           id="searchAdvice"
           type="search"
           value={props.searchTerm}
           onChange={props.onChangeHandler}
-          className={'w-[30rem] h-12 rounded-lg pl-5 text-black'}
-        />{' '}
+          className={'w-[30rem] h-12 rounded-lg pl-5 text-black bg-white'}
+        />
         <Button text={'Search'} onClickHandler={props.onClickHandlerSearch} />
       </div>
     </>
