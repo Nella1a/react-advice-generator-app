@@ -1,11 +1,7 @@
 import React from 'react';
-import { SearchAdviceType } from '../../types';
+import { SearchResultsProps } from '../../types';
 
-type Props = {
-  result: SearchAdviceType;
-};
-
-const SearchResults = ({ result }: Props) => {
+const SearchResults = ({ result }: SearchResultsProps) => {
   return (
     <>
       <article className="flex flex-col justify-center items-center text-white mt-8">

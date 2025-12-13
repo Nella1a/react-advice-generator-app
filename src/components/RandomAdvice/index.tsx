@@ -6,10 +6,6 @@ import { RandomAdviceText } from '../RandomAdviceText';
 import RoundButton from '../RoundButton';
 import { setErrorMessage } from '../SearchAdvice';
 
-export type APIRandomAdvice = {
-  slip: { id: number; advice: string };
-};
-
 const GetRandomAdvice = () => {
   const [loading, setLoading] = useState(false);
   const [randomAdvice, setRandomAdvice] = useState<RandomAdvice>();

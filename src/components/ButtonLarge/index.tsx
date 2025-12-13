@@ -1,10 +1,7 @@
 import React from 'react';
+import { ButtonProps } from '../../types';
 
-type Props = {
-  text: string;
-};
-
-const ButtonLarge = ({ text }: Props) => {
+const ButtonLarge = ({ text }: Pick<ButtonProps, 'text'>) => {
   return (
     <>
       <button

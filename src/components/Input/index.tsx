@@ -1,15 +1,12 @@
 import React from 'react';
+import { InputProps } from '../../types';
 import Button from '../Button';
 
-type Props = {
-  searchTerm: string;
-  onClickHandlerSearch: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
-  onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
-
-const SearchTerm = (props: Props) => {
+const SearchTerm = ({
+  searchTerm,
+  onChangeHandler,
+  onClickHandlerSearch,
+}: InputProps) => {
   return (
     <>
       <div className={'text-center w-full text-quote-size'}>
@@ -24,11 +21,12 @@ const SearchTerm = (props: Props) => {
         <input
           id="searchAdvice"
           type="search"
-          value={props.searchTerm}
-          onChange={props.onChangeHandler}
-          className={'w-[30rem] h-12 rounded-lg pl-5 text-black bg-white'}
+          value={searchTerm}
+          onChange={onChangeHandler}
+          onKeyDown={(e) => e.key === 'Enter' && onClickHandlerSearch(e)}
+          className={'w-120 h-12 rounded-lg pl-5 text-black bg-white'}
         />
-        <Button text={'Search'} onClickHandler={props.onClickHandlerSearch} />
+        <Button text={'Search'} onClickHandler={onClickHandlerSearch} />
       </div>
     </>
   );
