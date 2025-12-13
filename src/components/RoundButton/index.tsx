@@ -1,11 +1,8 @@
 import React from 'react';
+import { RoundButtonProps } from '../../types';
 import ImageComp from '../ImageComp';
 
-interface Props {
-  onClickHandler: () => void;
-};
-
-const RoundButton = ({ onClickHandler }: Props) => {
+const RoundButton = ({ onClickHandler }: RoundButtonProps) => {
   return (
     <button
       className="absolute z-10 -bottom-10 left-50% bg-neon-green

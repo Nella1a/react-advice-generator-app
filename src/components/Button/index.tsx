@@ -1,13 +1,7 @@
 import React from 'react';
+import { ButtonProps } from '../../types';
 
-interface Props {
-  text: string;
-  onClickHandler?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
-};
-
-const Button = ({ text, onClickHandler }: Props) => {
+const Button = ({ text, onClickHandler }: ButtonProps) => {
   return (
     <>
       <button

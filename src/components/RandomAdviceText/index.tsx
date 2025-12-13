@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApiError, RandomAdvice } from '../../types';
+import { RandomAdviceTextProps } from '../../types';
 import APIErrorMessage from '../APIErrorMessage';
 import LoadingMessage from '../LoadingState';
 
@@ -7,11 +7,7 @@ export const RandomAdviceText = ({
   loading,
   error,
   advice,
-}: {
-  loading: boolean;
-  error: ApiError;
-  advice?: RandomAdvice;
-}) => {
+}: RandomAdviceTextProps) => {
   if (!advice?.id && !loading) {
     return <span>Need advice? Click the button!</span>;
   }

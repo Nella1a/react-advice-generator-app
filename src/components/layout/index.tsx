@@ -1,10 +1,7 @@
 import React from 'react';
+import { LayoutProps } from '../../types';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <main className="flex md:mt-0 md:justify-center flex-col md:flex-row items-center md:gap-8 min-h-screen bg-dark-blue text-light-cyan">
       {children}
