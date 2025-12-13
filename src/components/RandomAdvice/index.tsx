@@ -6,7 +6,7 @@ import { RandomAdviceText } from '../RandomAdviceText';
 import RoundButton from '../RoundButton';
 import { setErrorMessage } from '../SearchAdvice';
 
-export type APIRandomAdvice = {
+export interface APIRandomAdvice {
   slip: { id: number; advice: string };
 };
 

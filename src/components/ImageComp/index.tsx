@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ImageProps = {
+interface ImageProps {
   src: string;
   description: string;
   width: string;

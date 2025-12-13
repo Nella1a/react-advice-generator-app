@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button';
 
-type Props = {
+interface Props {
   searchTerm: string;
   onClickHandlerSearch: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,

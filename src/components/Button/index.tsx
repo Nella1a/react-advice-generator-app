@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props = {
+interface Props {
   text: string;
   onClickHandler?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,

@@ -1,15 +1,15 @@
-export type SearchAdviceType = {
+export interface SearchAdviceType {
   total_results: number;
   query: string;
   slips: { id: number; advice: string }[];
 };
 
-export type RandomAdvice = {
+export interface RandomAdvice {
   id: number;
   advice: string;
 };
 
-export type ApiError = {
+export interface ApiError {
   type?: string;
   text?: string;
 };

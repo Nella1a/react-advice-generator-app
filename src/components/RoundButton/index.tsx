@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageComp from '../ImageComp';
 
-type Props = {
+interface Props {
   onClickHandler: () => void;
 };
 
