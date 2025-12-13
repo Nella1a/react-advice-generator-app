@@ -34,9 +34,7 @@ export interface RoundButtonProps {
 
 export interface InputProps {
   searchTerm: string;
-  onClickHandlerSearch: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
+  onClickHandlerSearch: (event: React.MouseEvent | React.KeyboardEvent) => void;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
