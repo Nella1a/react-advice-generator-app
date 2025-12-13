@@ -13,9 +13,3 @@ export interface ApiError {
   type?: string;
   text?: string;
 };
-
-export type RandomAdviceApiResponse =
-  | { slip: RandomAdvice }
-  | { message: ApiError };
-
-export type SearchAdviceApiResponse = SearchAdviceType | { message: ApiError };
