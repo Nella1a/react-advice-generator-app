@@ -48,9 +48,3 @@ Open <http://localhost:5173> on your browser.
 
 JavaScript, React + Vite, Tailwind CSS, TypeScript, Docker, Vercel
 
-## Screenshots
-
-![Index Page](./public/images/index.png)
-![Get-Random-Page](./public/images/getRandomAdvice.png)
-![Search-Page](./public/images/SearchAdvice.png)
-![Search-Advice-Result-Page](./public/images/SearchAdviceResult.png)
